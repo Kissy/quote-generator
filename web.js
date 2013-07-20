@@ -24,8 +24,8 @@ http.createServer(function (req, res) {
     
     var text = decodeURIComponent(parsedText[1]);
     var from = "- " + (parsedUrl.query || "Anonyme");
-    imagemagick("background.jpg")
-        .font('meiryo.ttc').fill('#BDC3C7')
+    imagemagick("assets/background.jpg")
+        .font('assets/meiryo.ttc').fill('#BDC3C7')
         .fontSize(32).drawText(0, 0, wordwrap(text), 'Center')
         .fontSize(16).drawText(10, 10, from, 'SouthWest')
         .stream().pipe(res);
